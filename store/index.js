@@ -1,12 +1,17 @@
-import { reducer as amountReducer } from './amount.js';
-import { reducer as goodsReducer } from './goods.js';
-import { reducer as positionReducer } from './position.js';
-import { combineReducers, createStore } from '../redux.js';
+// import { reducer as amountReducer } from './amount.js';
+// import { reducer as goodsReducer } from './goods.js';
+// import { reducer as positionReducer } from './position.js';
+// import { combineReducers, createStore } from '../redux.js';
 
-const rootReducer = combineReducers({
-  amount: amountReducer,
-  goods: goodsReducer,
-  position: positionReducer,
-});
+// const rootReducer = combineReducers({
+//   amount: amountReducer,
+//   goods: goodsReducer,
+//   position: positionReducer,
+// });
 
-export const store = createStore(rootReducer);
+// export const store = createStore(rootReducer);
+
+import { reducer } from "./amount.js";
+import { createStore } from "../redux.js";
+
+export const store = createStore(reducer);
