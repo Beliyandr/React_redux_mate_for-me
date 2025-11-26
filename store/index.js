@@ -11,7 +11,8 @@
 
 // export const store = createStore(rootReducer);
 
-import { reducer } from "./amount.js";
+// import { reducer } from "./amount.js";
+import { reducer } from "./goods.js";
 import { createStore } from "../redux.js";
 
 export const store = createStore(reducer);

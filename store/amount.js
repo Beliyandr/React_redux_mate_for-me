@@ -12,16 +12,22 @@
 
 export function reducer(amount = 100, action) {
   switch (action.type) {
-    case "add":
+    case "amount/add":
       return amount + action.payload;
 
-    case "take":
+    case "amount/take":
       return amount - action.payload;
 
-    case "clear":
+    case "amount/clear":
       return 0;
 
     default:
       return amount;
   }
+}
+
+export const actions = {
+  add: (payload) => ({ type: 'amount/add', payload }),
+  take: (payload) => ({ type: 'amount/take', payload }),
+  clear: () => ({ type: 'amount/clear' }),
 }
