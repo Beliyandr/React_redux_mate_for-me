@@ -11,8 +11,15 @@
 
 // export const store = createStore(rootReducer);
 
-// import { reducer } from "./amount.js";
-import { reducer } from "./goods.js";
+import { reducer as amountReducer } from "./amount.js";
+import { reducer as goodsReducer } from "./goods.js";
 import { createStore } from "../redux.js";
+
+const rootReducer = (state, action) => {
+  return {
+    amount: amountReducer(state?.amount, action),
+  }
+}
+
 
 export const store = createStore(reducer);

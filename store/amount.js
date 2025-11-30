@@ -10,15 +10,20 @@
 //   }
 // })
 
+const TYPE_ADD = 'amount/add';
+const TYPE_TAKE = 'amount/take';
+const TYPE_CLEAR = 'amount/clear';
+
+
 export function reducer(amount = 100, action) {
   switch (action.type) {
-    case "amount/add":
+    case TYPE_ADD:
       return amount + action.payload;
 
-    case "amount/take":
+    case TYPE_TAKE:
       return amount - action.payload;
 
-    case "amount/clear":
+    case TYPE_CLEAR:
       return 0;
 
     default:
@@ -27,7 +32,7 @@ export function reducer(amount = 100, action) {
 }
 
 export const actions = {
-  add: (payload) => ({ type: 'amount/add', payload }),
-  take: (payload) => ({ type: 'amount/take', payload }),
-  clear: () => ({ type: 'amount/clear' }),
+  add: (payload) => ({ type: TYPE_ADD, payload }),
+  take: (payload) => ({ type: TYPE_TAKE, payload }),
+  clear: () => ({ type: TYPE_CLEAR }),
 }

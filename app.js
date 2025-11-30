@@ -11,7 +11,7 @@ const unsubscribe = subscribe(() => {
 dispatch(actions.add(50));
 
 dispatch({ type: "take", payload: 30 });
-dispatch({ type: "take", payload: 30 });
+dispatch({ type: 'goods/take', payload: 30 });
 // unsubscribe();
 dispatch({ type: "take", payload: 30 });
 dispatch({ type: "take", payload: 30 });
