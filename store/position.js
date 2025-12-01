@@ -1,4 +1,4 @@
-import { createSlice } from '../redux.js';
+import { createSlice } from "../redux.js";
 
 const initialState = {
   x: 0,
@@ -25,7 +25,13 @@ const reducers = {
 };
 
 export const { reducer, actions } = createSlice({
-  name: 'position',
+  name: "position",
   initialState,
   reducers,
 });
+
+// export const { reducer, actions } = createSlice({
+//   name: "position",
+//   initialState,
+//   reducers,
+// });
