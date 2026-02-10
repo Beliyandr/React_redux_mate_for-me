@@ -1,16 +1,19 @@
-import { useState } from "react";
-import { useAppSelector } from "../app/hooks";
-import { useDispatch } from "react-redux";
-import { actions as positionActions } from "../features/position";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import * as positionActions from "../features/position";
 
 export const Position = () => {
   const { x, y } = useAppSelector((state) => state.position);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const moveLeft = () => dispatch(positionActions.moveLeft());
   const moveRight = () => dispatch(positionActions.moveRight());
   const moveUp = () => dispatch(positionActions.moveUp());
   const moveDown = () => dispatch(positionActions.moveDown());
+
+  const dance = async () => {
+    dispatch(positionActions.doACircle(500));
+    // doACircle(dispatch);
+  };
 
   const transformValue = `translate(${x * 100}%, ${y * 100}%)`;
 
@@ -34,7 +37,11 @@ export const Position = () => {
         </div>
 
         <div className="field">
-          <div className="track" style={{ transform: transformValue }}>
+          <div
+            className="track"
+            style={{ transform: transformValue, cursor: "pointer" }}
+            onClick={dance}
+          >
             {x + y}
           </div>
         </div>
